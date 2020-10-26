@@ -47,4 +47,31 @@
            DISPLAY "Go to College"
        END-IF
 
+       If Score IS PassingScore THEN
+           DISPLAY " You Passed"
+       ELSE
+           DISPLAY " YOU FAILED"
+       END-IF
+
+       IF Score IS NOT NUMERIC THEN
+           DISPLAY " Not a Number"
+
+       IF Age > 18 THEN
+           SET CanVote to TRUE
+       ELSE
+           SET CantVote TO TRUE
+       END-IF
+       DISPLAY "Vote " CanVoteFlag
+       DISPLAY " Enter Single Number or X to Exit: "
+       ACCEPT TestNumber
+       PERFORM UNTIL NOT ANumber
+           EVALUATE TRUE
+               WHEN IsPrime DISPLAY "Prime"
+               WHEN IsOdd DISPLAY "Odd"
+               WHEN IsEven DISPLAY "EVEN"
+               WHEN LessThen5 DISPLAY "Less Then 5"
+               WHEN OTHER DISPLAY "Default Action"
+           END-EVALUATE
+           ACCEPT TestNumber
+       END-PERFORM
        STOP RUN.
